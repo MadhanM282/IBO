@@ -46,22 +46,20 @@
   // which should return count of each Product(as an object) 
   // present in the given list of Products considering Product Name as Key.
 
-  function getUniqueProductCount() {
-    let obj={}
-
-    for (let i = 0; i < listOfProducts.length; i++) {
-      if (obj[listOfProducts[i].productName] === undefined) {
-        obj[listOfProducts[i].productName] = 1
-      }
-      else {
-        obj[listOfProducts[i].productName]++
-      }
-    }
-
-    console.log(obj)
-
-  }
-  getUniqueProductCount()
+  
+let obj1 = {}
+function getUniqueProductCount() {
+    listOfProducts.map(el => {
+        if(obj1[el.productName] == undefined){
+            obj1[el.productName] = 1;
+        }else{
+            obj1[el.productName]++
+        }
+       
+    })
+    console.log(obj1)
+}
+getUniqueProductCount()
 
 
 
