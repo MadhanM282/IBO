@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const listOfProducts = [{
+    productName: "TV",
+    quantity: 10,
+    description: "television"
+  },
+  {
+    productName: "AC",
+    quantity: 5,
+    description: "air conditioner"
+  },
+  {
+    productName: "TV",
+    quantity: 10,
+    description: "television"
+  },
+  {
+    productName: "AC",
+    quantity: 8,
+    description: "air conditioner"
+  },
+  {
+    productName: "FAN",
+    quantity: 10,
+    description: "Ceiling Fan"
+  }
+];
+
+let obj1 = {}
+function getUniqueProductCount() {
+    listOfProducts.map(el => {
+        if(obj1[el.productName] == undefined){
+            obj1[el.productName] = 1;
+        }else{
+            obj1[el.productName]++
+        }
+       
+    })
+    console.log(obj1)
+}
+getUniqueProductCount()
+
+let obj2 = [];
+function getUniqueProducts() {
+   
+  listOfProducts.map(el => {
+      let status = false;
+      obj2.map(element => {
+          if(element.productName == el.productName){
+              status = true;
+              element.quantity += el.quantity;
+          }
+      })
+      if(!status){
+          obj2.push(el);
+      }
+  })
+  console.log(obj2);
+}
+getUniqueProducts()
+</script>
+</html>
